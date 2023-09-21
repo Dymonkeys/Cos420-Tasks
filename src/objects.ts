@@ -81,7 +81,14 @@ export function toShortForm(question: Question): string {
  * Check the unit tests for more examples of what this looks like!
  */
 export function toMarkdown(question: Question): string {
-    return "";
+    let output: string = "# " + question.name;
+    output += "\n" + question.body;
+    if (question.type === "multiple_choice_question") {
+        output += "\n";
+        //Add each element of question.options seperated by a new line to output
+        output += question.options.join("\n");
+    }
+    return output;
 }
 
 /**
