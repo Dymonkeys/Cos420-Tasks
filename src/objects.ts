@@ -22,7 +22,6 @@ export function makeBlankQuestion(
     };
 }
 
-
 /**
  * Consumes a question and a potential `answer`, and returns whether or not
  * the `answer` is correct. You should check that the `answer` is equal to
@@ -31,7 +30,11 @@ export function makeBlankQuestion(
  * HINT: Look up the `trim` and `toLowerCase` functions.
  */
 export function isCorrect(question: Question, answer: string): boolean {
-    return false;
+    answer = answer.trim().toLowerCase();
+    const expected = question.expected.trim().toLowerCase();
+    if (expected === answer) {
+        return true;
+    } else return false;
 }
 
 /**
