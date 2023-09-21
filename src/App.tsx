@@ -11,6 +11,17 @@ function App(): JSX.Element {
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload. David Neufeld
             </p>
+            <h1>Hello World</h1>
+            <img
+                src="../assets/images/pet-ada.jpg"
+                alt="A picture of my dog Ada"
+            />
+            Ordered List:
+            <ol>
+                <li>First thing</li>
+                <li>Another thing</li>
+                <li>A third item</li>
+            </ol>
         </div>
     );
 }
