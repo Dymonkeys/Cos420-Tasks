@@ -84,9 +84,9 @@ export function toMarkdown(question: Question): string {
     let output: string = "# " + question.name;
     output += "\n" + question.body;
     if (question.type === "multiple_choice_question") {
-        output += "\n";
+        output += "\n- ";
         //Add each element of question.options seperated by a new line to output
-        output += question.options.join("\n");
+        output += question.options.join("\n- ");
     }
     return output;
 }
