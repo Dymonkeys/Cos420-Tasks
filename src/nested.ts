@@ -217,7 +217,22 @@ export function editOption(
     targetOptionIndex: number,
     newOption: string
 ): Question[] {
-    return [];
+    return questions.map((question) => {
+        if (question.id === targetId) {
+            const out: Question = {
+                ...question,
+                options: [...question.options] // Deep copy the options array
+            };
+            if (targetOptionIndex === -1) {
+                out.options.push(newOption);
+            } else {
+                out.options[targetOptionIndex] = newOption;
+            }
+            return out;
+        } else {
+            return { ...question };
+        }
+    });
 }
 
 /***
