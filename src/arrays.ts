@@ -77,7 +77,7 @@ export function countShortWords(words: string[]): number {
  */
 export function allRGB(colors: string[]): boolean {
     if (colors.length === 0) return true;
-    return colors.reduce((count, color) => {
+    return colors.reduce((count: boolean, color) => {
         if (color !== "red" && color !== "blue" && color !== "green") {
             count = false;
         }
